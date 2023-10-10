@@ -11,7 +11,7 @@ import axios from "axios";
 export const getAllVideogames = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/videogames");
+      const response = await axios.get("https://backend-pi-henry.onrender.com/videogames");
       if (!response) throw Error("errooooooor");
       dispatch({
         type: ALL_GAMES,
@@ -26,7 +26,7 @@ export const getAllVideogames = () => {
 export const getVideogamesDetail = (id) => {
   return async (dispatch) => {
     return await axios
-      .get(`http://localhost:3001/videogames/${id}`)
+      .get(`https://backend-pi-henry.onrender.com/videogames/${id}`)
       .then((response) => {
         dispatch({
           type: DETAIL_GAMES,
@@ -39,7 +39,7 @@ export const getVideogamesDetail = (id) => {
 export const getVideogamesName = (name) => {
   return async (dispatch) => {
     return await axios
-      .get(`http://localhost:3001/videogames/name?name=${name}`)
+      .get(`https://backend-pi-henry.onrender.com/videogames/name?name=${name}`)
       .then((response) => {
         dispatch({
           type: VIDEOGAMES_NAME,
@@ -53,7 +53,7 @@ export const getVideogamesName = (name) => {
 export const createVideogames = (games) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post(`http://localhost:3001/videogames`, games)
+      const response = await axios.post(`https://backend-pi-henry.onrender.com/videogames`, games)
       dispatch({
         type: CREATE_GAMES,
         payload: {
