@@ -25,7 +25,7 @@ const Form = () => {
         rating: "",
         genres: []
     })
-   console.log('soy games', games)
+
 
     const [error, setError] = useState({
       name: "",
