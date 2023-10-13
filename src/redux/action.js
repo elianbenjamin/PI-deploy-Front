@@ -12,6 +12,7 @@ export const getAllVideogames = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get("https://backend-pi-henry.onrender.com/videogames");
+      console.log('eeeeyyy', response)
       if (!response) throw Error("errooooooor");
       dispatch({
         type: ALL_GAMES,
